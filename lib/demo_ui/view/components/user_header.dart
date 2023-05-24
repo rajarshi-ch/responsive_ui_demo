@@ -23,6 +23,7 @@ class UserHeader extends StatelessWidget {
           padding: EdgeInsets.only(top: pad, bottom: pad, right: pad),
           child: CircleAvatar(
             backgroundImage: AssetImage(user.imageUrl),
+            backgroundColor: user.userAvatarBgColor,
           ),
         ),
         Column(

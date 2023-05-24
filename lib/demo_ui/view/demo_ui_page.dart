@@ -34,90 +34,100 @@ class _DemoPageState extends State<DemoPage> {
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-          child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: posts
-              .map((post) => Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
+        children: posts
+            .map((post) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(kMainScreenPadding),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          //TODO: Calculate daysAgo , based on post.postDateTime
-                          UserHeader(
-                              user: post.user,
-                              showSecondLine: true,
-                              daysAgo: '1일전'),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              //TODO: Calculate daysAgo , based on post.postDateTime
+                              UserHeader(
+                                  user: post.user,
+                                  showSecondLine: true,
+                                  daysAgo: '1일전'),
 
-                          RoundedButton(onPressed: () {}, buttonText: '팔로우')
+                              RoundedButton(onPressed: () {}, buttonText: '팔로우')
+                            ],
+                          ),
+                          const SizedBox(
+                            height: 8,
+                          ),
+                          Text(
+                            post.title,
+                            style: kHeadingStyle,
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Text(
+                            post.body,
+                            style: kContentStyle,
+                          ),
+                          const SizedBox(
+                            height: 12,
+                          ),
+                          Wrap(
+                            spacing: 4,
+                            runSpacing: 4,
+                            children: post.hashTags
+                                .map((tag) => HashTag(hashTag: tag))
+                                .toList(),
+                          ),
                         ],
                       ),
-                      const SizedBox(
-                        height: 8,
+                    ),
+                    const SizedBox(
+                      height: 12,
+                    ),
+                    ImageCarousel(imageUrls: post.images),
+                    Padding(
+                      padding: const EdgeInsets.all(kMainScreenPadding),
+                      child: Row(children: const [
+                        Likes(
+                          likes: 5,
+                        ),
+                        SizedBox(
+                          width: kSpacingBetweenButtons,
+                        ),
+                        Comments(comments: 5),
+                        SizedBox(
+                          width: kSpacingBetweenButtons,
+                        ),
+                        Icon(
+                          Icons.bookmark_border_outlined,
+                          color: kLightGray,
+                        ),
+                        SizedBox(
+                          width: kSpacingBetweenButtons,
+                        ),
+                        MoreButton(),
+                      ]),
+                    ),
+                    Divider(
+                      height: 10,
+                      color: kLightBorderGray.withOpacity(0.6),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: kMainScreenPadding,
                       ),
-                      Text(
-                        post.title,
-                        style: kHeadingStyle,
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      Text(
-                        post.body,
-                        style: kContentStyle,
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      Wrap(
-                        spacing: 4,
-                        runSpacing: 4,
-                        children: post.hashTags
-                            .map((tag) => HashTag(hashTag: tag))
-                            .toList(),
-                      ),
-                      const SizedBox(
-                        height: 12,
-                      ),
-                      ImageCarousel(imageUrls: post.images),
-                      Padding(
-                        padding: const EdgeInsets.all(12),
-                        child: Row(children: const [
-                          Likes(
-                            likes: 5,
-                          ),
-                          SizedBox(
-                            width: kSpacingBetweenButtons,
-                          ),
-                          Comments(comments: 5),
-                          SizedBox(
-                            width: kSpacingBetweenButtons,
-                          ),
-                          Icon(
-                            Icons.bookmark_border_outlined,
-                            color: kLightGray,
-                          ),
-                          SizedBox(
-                            width: kSpacingBetweenButtons,
-                          ),
-                          MoreButton(),
-                        ]),
-                      ),
-                      Divider(
-                        height: 10,
-                        color: kLightBorderGray.withOpacity(0.6),
-                      ),
-                      CommentsSection(),
-                      Divider(
-                        height: 10,
-                        color: kLightBorderGray.withOpacity(0.6),
-                      ),
-                      const WriteCommentBox(),
-                    ],
-                  ))
-              .toList(),
-        ),
+                      child: CommentsSection(),
+                    ),
+                    Divider(
+                      height: 10,
+                      color: kLightBorderGray.withOpacity(0.6),
+                    ),
+                    const WriteCommentBox(),
+                  ],
+                ))
+            .toList(),
       )),
     );
   }

@@ -12,3 +12,7 @@ const double kMicroTextSize = 10;
 // SPacing Sizes
 
 const double kSpacingBetweenButtons = 12;
+
+//Padding
+
+const double kMainScreenPadding = 20;

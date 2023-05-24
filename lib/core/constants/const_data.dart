@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:responsive_ui_demo/demo_ui/data/models/post_model.dart';
 import 'package:responsive_ui_demo/demo_ui/data/models/user_model.dart';
 
@@ -8,6 +9,7 @@ final List<User> kUsers = [
     userName: '안녕 나 응애',
     imageUrl: 'assets/images/image1.png',
     isVerified: true,
+    userAvatarBgColor: Color.fromARGB(255, 238, 201, 121),
   ),
   User(
     height: 165,
@@ -15,6 +17,7 @@ final List<User> kUsers = [
     userName: 'ㅇㅅㅇ',
     imageUrl: 'assets/images/image2.png',
     isVerified: false,
+    userAvatarBgColor: Color.fromARGB(255, 249, 136, 140),
   ),
 ];
 

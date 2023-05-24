@@ -9,7 +9,10 @@ class WriteCommentBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(
+        horizontal: kMainScreenPadding,
+        vertical: kMainScreenPadding * 0.5,
+      ),
       child: Row(
         children: [
           const Icon(
