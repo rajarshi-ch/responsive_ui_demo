@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui_demo/core/constants/const_data.dart';
 import 'package:responsive_ui_demo/core/constants/constant_colors.dart';
+import 'package:responsive_ui_demo/core/constants/constant_sizes.dart';
 import 'package:responsive_ui_demo/core/constants/constant_text_styles.dart';
+import 'package:responsive_ui_demo/demo_ui/view/components/comments.dart';
+import 'package:responsive_ui_demo/demo_ui/view/components/comments_section.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/custom_back_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/hash_tag.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/image_carousal.dart';
+import 'package:responsive_ui_demo/demo_ui/view/components/likes.dart';
+import 'package:responsive_ui_demo/demo_ui/view/components/more_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/notification_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/rounded_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/user_header.dart';
@@ -26,6 +31,7 @@ class _DemoPageState extends State<DemoPage> {
         actions: const [NotificationButton()],
         centerTitle: true,
       ),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
           child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -73,7 +79,35 @@ class _DemoPageState extends State<DemoPage> {
                       const SizedBox(
                         height: 12,
                       ),
-                      ImageCarousel(imageUrls: post.images)
+                      ImageCarousel(imageUrls: post.images),
+                      Padding(
+                        padding: const EdgeInsets.all(12),
+                        child: Row(children: const [
+                          Likes(
+                            likes: 5,
+                          ),
+                          SizedBox(
+                            width: kSpacingBetweenButtons,
+                          ),
+                          Comments(comments: 5),
+                          SizedBox(
+                            width: kSpacingBetweenButtons,
+                          ),
+                          Icon(
+                            Icons.bookmark_border_outlined,
+                            color: kLightGray,
+                          ),
+                          SizedBox(
+                            width: kSpacingBetweenButtons,
+                          ),
+                          MoreButton(),
+                        ]),
+                      ),
+                      const Divider(
+                        height: 10,
+                        color: kLightBackgroundGray,
+                      ),
+                      CommentsSection(),
                     ],
                   ))
               .toList(),

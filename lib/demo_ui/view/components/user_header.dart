@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_ui_demo/core/constants/constant_colors.dart';
 import 'package:responsive_ui_demo/core/constants/constant_text_styles.dart';
-import 'package:responsive_ui_demo/demo_ui/view/data/models/user_model.dart';
+import 'package:responsive_ui_demo/demo_ui/data/models/user_model.dart';
 
 class UserHeader extends StatelessWidget {
   const UserHeader({
@@ -16,10 +16,11 @@ class UserHeader extends StatelessWidget {
   final String daysAgo;
   @override
   Widget build(BuildContext context) {
+    double pad = 8;
     return Row(
       children: [
         Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: EdgeInsets.only(top: pad, bottom: pad, right: pad),
           child: CircleAvatar(
             backgroundImage: AssetImage(user.imageUrl),
           ),

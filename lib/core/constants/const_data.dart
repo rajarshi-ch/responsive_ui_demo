@@ -1,5 +1,5 @@
-import 'package:responsive_ui_demo/demo_ui/view/data/models/post_model.dart';
-import 'package:responsive_ui_demo/demo_ui/view/data/models/user_model.dart';
+import 'package:responsive_ui_demo/demo_ui/data/models/post_model.dart';
+import 'package:responsive_ui_demo/demo_ui/data/models/user_model.dart';
 
 final List<User> kUsers = [
   User(

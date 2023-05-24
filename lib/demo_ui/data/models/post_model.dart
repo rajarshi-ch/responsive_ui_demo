@@ -1,3 +1,4 @@
+import 'package:responsive_ui_demo/demo_ui/data/models/comment_model.dart';
 import 'package:responsive_ui_demo/demo_ui/data/models/user_model.dart';
 
 class Post {

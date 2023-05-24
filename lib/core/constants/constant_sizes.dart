@@ -8,3 +8,7 @@ const double kHeaderSize = 16;
 const double kContentSize = 14;
 const double kSmallTextSize = 12;
 const double kMicroTextSize = 10;
+
+// SPacing Sizes
+
+const double kSpacingBetweenButtons = 12;
