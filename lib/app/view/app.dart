@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_ui_demo/counter/counter.dart';
+import 'package:responsive_ui_demo/demo_ui/view/demo_ui_page.dart';
 import 'package:responsive_ui_demo/l10n/l10n.dart';
 
 class App extends StatelessWidget {
@@ -16,7 +16,7 @@ class App extends StatelessWidget {
       ),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const CounterPage(),
+      home: const DemoPage(),
     );
   }
 }
