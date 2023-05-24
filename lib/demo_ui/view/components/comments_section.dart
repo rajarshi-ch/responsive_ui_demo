@@ -10,6 +10,7 @@ import 'package:responsive_ui_demo/demo_ui/view/components/user_header.dart';
 
 class CommentsSection extends StatelessWidget {
   CommentsSection({super.key});
+  //This represents the original comment
   final Comment mainComment = Comment(
     user: kUsers[0],
     body: '어머 제가 있던 테이블이 제일 반응이 좋았나보네요🤭 '
@@ -22,6 +23,7 @@ class CommentsSection extends StatelessWidget {
     commentDate: DateTime.now(),
   );
 
+  // Add more replies here to automatically render them
   final List<Comment> replies = [
     Comment(
       user: kUsers[1],
@@ -30,7 +32,7 @@ class CommentsSection extends StatelessWidget {
       likes: 5,
       replies: 0,
       commentDate: DateTime.now(),
-    )
+    ),
   ];
 
   @override

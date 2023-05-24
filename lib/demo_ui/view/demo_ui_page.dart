@@ -13,6 +13,7 @@ import 'package:responsive_ui_demo/demo_ui/view/components/more_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/notification_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/rounded_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/user_header.dart';
+import 'package:responsive_ui_demo/demo_ui/view/components/write_comment_box.dart';
 
 class DemoPage extends StatefulWidget {
   const DemoPage({super.key});
@@ -103,11 +104,16 @@ class _DemoPageState extends State<DemoPage> {
                           MoreButton(),
                         ]),
                       ),
-                      const Divider(
+                      Divider(
                         height: 10,
-                        color: kLightBackgroundGray,
+                        color: kLightBorderGray.withOpacity(0.6),
                       ),
                       CommentsSection(),
+                      Divider(
+                        height: 10,
+                        color: kLightBorderGray.withOpacity(0.6),
+                      ),
+                      const WriteCommentBox(),
                     ],
                   ))
               .toList(),
