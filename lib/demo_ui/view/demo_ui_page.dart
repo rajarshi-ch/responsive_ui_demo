@@ -4,6 +4,7 @@ import 'package:responsive_ui_demo/core/constants/constant_colors.dart';
 import 'package:responsive_ui_demo/core/constants/constant_text_styles.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/custom_back_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/hash_tag.dart';
+import 'package:responsive_ui_demo/demo_ui/view/components/image_carousal.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/notification_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/rounded_button.dart';
 import 'package:responsive_ui_demo/demo_ui/view/components/user_header.dart';
@@ -68,7 +69,11 @@ class _DemoPageState extends State<DemoPage> {
                         children: post.hashTags
                             .map((tag) => HashTag(hashTag: tag))
                             .toList(),
-                      )
+                      ),
+                      const SizedBox(
+                        height: 12,
+                      ),
+                      ImageCarousel(imageUrls: post.images)
                     ],
                   ))
               .toList(),
