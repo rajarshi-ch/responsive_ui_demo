@@ -27,10 +27,15 @@ class _DemoPageState extends State<DemoPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('자유톡'),
+        title: Text(
+          '자유톡',
+          style: kHeadingStyle.copyWith(fontSize: 24),
+        ),
         leading: const CustomBackButton(),
         actions: const [NotificationButton()],
         centerTitle: true,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(

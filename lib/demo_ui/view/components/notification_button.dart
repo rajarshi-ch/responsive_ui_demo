@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_ui_demo/core/constants/constant_colors.dart';
 
 class NotificationButton extends StatelessWidget {
   const NotificationButton({super.key});
@@ -12,7 +13,10 @@ class NotificationButton extends StatelessWidget {
         //In case of a real app, we would open the notifications page here
         //Navigator.of(context).push( NotificationsPage.route );
       },
-      icon: const Icon(Icons.notifications_outlined),
+      icon: const Icon(
+        Icons.notifications_outlined,
+        color: kLightGray,
+      ),
     );
   }
 }
